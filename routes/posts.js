@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 
 
 router.post('/', (req, res) => {
-	knex('post').insert(req.body)
+	knex('post').insert({title: req.body.title, body: req.body.body, author: req.body.author, image_url: req.body.image_url, vote_count: req.body.voteCount, created_at: req.body.time})
 		.then(function(data) {
 			res.send(data)
 		})
