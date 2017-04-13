@@ -8,4 +8,12 @@ router.get('/', (req, res) => {
 		})
 })
 
+
+router.post('/', (req, res) => {
+	knex('post').insert(req.body)
+		.then(function(data) {
+			res.send(data)
+		})
+})
+
 module.exports = router;
